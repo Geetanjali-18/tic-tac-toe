@@ -1,0 +1,114 @@
+*{
+  margin: 0;
+}
+.app{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-image: url('../src/components/bgImage.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-y: scroll;
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+.winner{
+    background: rgba(255, 105, 180, 0.4);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -70%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;
+    height: 20vh;
+    flex-direction: column;
+    padding: .5rem;
+    gap: 1vh;
+    font-size: 1.5rem;
+    opacity: 1;
+    font-weight: 500;
+    backdrop-filter: blur(5px);
+    border-radius: 15px 50px 30px;
+    transition: all ease-in .3s;
+
+}
+
+.shrink {
+    transform: scale(.1);
+    opacity: 0;
+}
+.winnerText{
+  background-color: blue;
+  color: white;
+  font-weight: 600;
+}
+
+.rabbit{
+  position: absolute;
+  right: 16%;
+  width:20%;
+  height: 35%;
+  animation: mymove 1s infinite ease-in-out;
+}
+
+@keyframes mymove{
+   100%{
+    transform: translateY(30px);
+   }
+}
+button{
+    background:#1AAB8A;
+    color:#fff;
+    border:none;
+    position:relative;
+    height:40px;
+    font-size:1.2rem;
+    padding:1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+    margin: 0.7rem;
+    border-radius: 20px;
+  }
+  button:hover{
+    background:#fff;
+    color:#1AAB8A;
+  }
+  button:before,button:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:1.5px;
+    width:0;
+    background: #1AAB8A;
+    transition:400ms ease all;
+  }
+  button:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+  }
+  button:hover:before,button:hover:after{
+    width:100%;
+    transition:800ms ease all;
+  }
+
+  @media (min-width: 768px) {
+    button {
+        padding: .75rem 1.5rem;
+    }
+}
+
